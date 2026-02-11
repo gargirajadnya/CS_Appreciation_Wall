@@ -194,7 +194,8 @@ function filterCards() {
 </html>
 """
 
-with open("appreciation_wall_fancy.html", "w", encoding="utf-8") as f:
+with open("index.html", "w", encoding="utf-8") as f:
     f.write(html)
 
-print("💖 Fancy interactive wall created! Open 'appreciation_wall_fancy.html'")
+print("💖 Fancy interactive wall created! Open 'index.html'")
+
