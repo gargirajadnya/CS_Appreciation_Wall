@@ -1,0 +1,2474 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wall of Appreciation 💖</title>
+<style>
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #ffe6eb, #f8efea);
+    background-image: 
+        radial-gradient(circle at 5% 10%, #ffb6c1 2%, transparent 0),
+        radial-gradient(circle at 20% 80%, #ffb6c1 2%, transparent 0),
+        radial-gradient(circle at 50% 30%, #ffb6c1 2%, transparent 0),
+        radial-gradient(circle at 70% 60%, #ffb6c1 2%, transparent 0),
+        radial-gradient(circle at 90% 20%, #ffb6c1 2%, transparent 0),
+        radial-gradient(circle at 35% 50%, #ffb6c1 2%, transparent 0),
+        radial-gradient(circle at 60% 75%, #ffb6c1 2%, transparent 0);
+    background-size: 40px 40px; /* size of the cork pattern */
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+    padding: 40px;
+    text-align: center;
+}
+
+h1 {
+    color: #b22222;
+    margin-bottom: 20px;
+}
+
+select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #d62828;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Flip card container */
+.flip-card {
+    width: 260px;
+    height: 240px;
+    perspective: 1000px;
+    position: relative;      /* IMPORTANT */
+    display: inline-block; 
+    vertical-align: top;
+}
+
+.flip-card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;         /* LOCK POSITION */
+    left: 0;    
+    backface-visibility: hidden;
+    cursor: pointer;
+
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+.heart-svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.heart-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+    text-align: center;
+    word-wrap: break-word;
+    line-height: 1.4;
+    z-index: 2;
+}
+
+.name-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #b22222;
+}
+
+.message-text {
+    font-size: 15px;
+    color: #5a2a2a;
+}
+
+
+</style>
+</head>
+<body>
+
+<h1>💖 Wall of Appreciation 💖</h1>
+
+<select id="nameFilter" onchange="filterCards()">
+<option value="all">All Names</option>
+<option value="Alex">Alex</option><option value="Anna">Anna</option><option value="Anna and Daniel">Anna and Daniel</option><option value="Anna, Alex, Chris, and Miriam">Anna, Alex, Chris, and Miriam</option><option value="Brendan Jobus">Brendan Jobus</option><option value="Brendan Tuite">Brendan Tuite</option><option value="Cairo">Cairo</option><option value="Chris">Chris</option><option value="Damien">Damien</option><option value="Dan C">Dan C</option><option value="Daniel F">Daniel F</option><option value="David Doyle">David Doyle</option><option value="David F">David F</option><option value="David G">David G</option><option value="Eamon">Eamon</option><option value="Eder">Eder</option><option value="Eimear">Eimear</option><option value="Everyone">Everyone</option><option value="For all our Pot Luck chefs - Thank you">For all our Pot Luck chefs - Thank you</option><option value="Gargi">Gargi</option><option value="Garrett">Garrett</option><option value="Hannah">Hannah</option><option value="Hannah and Social Committee">Hannah and Social Committee</option><option value="Hannah, Chris and Miriam">Hannah, Chris and Miriam</option><option value="Jason">Jason</option><option value="Jason and Maissa">Jason and Maissa</option><option value="Julie">Julie</option><option value="Killian">Killian</option><option value="Kshitij">Kshitij</option><option value="Maissa">Maissa</option><option value="Meadhbh">Meadhbh</option><option value="Miriam">Miriam</option><option value="Nikhil">Nikhil</option><option value="Nikhil and Ramit">Nikhil and Ramit</option><option value="Pau">Pau</option><option value="Pau and Cairo">Pau and Cairo</option><option value="People Managers (old & new)">People Managers (old & new)</option><option value="Peter">Peter</option><option value="Pranav">Pranav</option><option value="Rajesh">Rajesh</option><option value="Ramit">Ramit</option><option value="Ross">Ross</option><option value="Sean">Sean</option><option value="Shane">Shane</option><option value="Shireen">Shireen</option><option value="Team GCD (Gargi, Cairo, Dan C)">Team GCD (Gargi, Cairo, Dan C)</option><option value="Tom">Tom</option><option value="Tom, Julie, David F, and the wider Clear Strategy team ">Tom, Julie, David F, and the wider Clear Strategy team </option><option value="Yash">Yash</option><option value="Yash and Pranav">Yash and Pranav</option>
+</select>
+
+<div class="wall">
+
+    <div class="flip-card" data-name="Everyone">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Everyone</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">For such a great 1st Month - thanks for your time and patience! </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Tom, Julie, David F, and the wider Clear Strategy team ">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Tom, Julie, David F, and the wider Clear Strategy team </div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">For holding the People & Culture fort while I was away, thank you all at CS for being the best and most supportive colleagues!  </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Shireen">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Shireen</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Shireen is always incredibly helpful and kind!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Meadhbh">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Meadhbh</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Always good to chat with - very insightful and thoughtful.  Great to work with!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Alex">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Alex</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Alex has great skills and brings a fun, positive energy to the team.</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Eimear">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Eimear</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Super positive and encouraging.  Always puts others before herself and is very empathetic</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Hannah and Social Committee">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Hannah and Social Committee</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">A massive kudos and shout out to Hannah and the CS Social Committee - for all the wonderful initiatives and updates you share every month - including the monthly newsletter, LinkedIn posts, social initiatives and social events. You should be proud of your contributions to cultivating a happy & positive culture at CS. Thank you. </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Chris">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Chris</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Chris is a genuinely nice person who is pleasant to work with and always contributes to a friendly, welcoming atmosphere.</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Hannah">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Hannah</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Great energy and always eager to learn.</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Killian">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Killian</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">A calming presence on calls and in the office.  He's everyone's favourite uncle</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="David F">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">David F</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Quick to laugh and self deprecating, despite his success.  A very assured and knowledgeable presence in client meetings</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Pau and Cairo">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Pau and Cairo</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Even as new joiners, Cairo and Pau have been very helpful and kind. They’re positive and already contributing to a supportive team atmosphere.</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Damien">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Damien</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Brings a lot of experience and positive energy to his job - essential for growth</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Tom">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Tom</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">A real gentleman and a Data wizard - a great man to have in your corner on a call</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Shane">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Shane</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Has made a big impact since joining - very good with clients/prospects....a calm and knowledgeable demeanour....oozes confidence and competence.  Not bad at pool too!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Peter">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Peter</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">When he's not fighting crime in Greystones or cheering on Grimsby town he's quietly going about his work in a diligent and conscientious manner.  Popular with clients and colleagues</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Julie">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Julie</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Has accomplished more by lunchtime than most people cram into a whole day.  Sets high standards for everyone and consistently exceeds them herself.</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="People Managers (old & new)">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">People Managers (old & new)</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Thank you to all of our People Managers new and old - For the work you do in supporting and guiding our teams - Your dedication and enthusiasm is truly appreciated. </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="For all our Pot Luck chefs - Thank you">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">For all our Pot Luck chefs - Thank you</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Thank you to everyone who made the effort to cook and bring in food for our Pot Luck :-P And thanks to the Social Committee for organising such a marvelous feast! </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Shireen">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Shireen</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Shireen is a total sweetheart! She's always supportive (without any judgement), an amazing listener and super talented. </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Miriam">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Miriam</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Always looking out for people and really welcoming people to the company - she puts in effort with everyone and is an incredibly kind person!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Cairo">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Cairo</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">In so little time, you have been so fun to work with and a great pool teacher!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Anna">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Anna</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">You are so smart, and dress up so greatly, when I grow up, I want to be like you! 🤩</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Alex">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Alex</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">You are a great talent in your field, but your talents are not limited to engineering. I can see how creative and stylish you are on your social committee comms.</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Ramit">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Ramit</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">We made a great team on Ask Ally. It’s wonderful to see your passion and curiosity for the work really shining through.</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Shane">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Shane</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">I’m really excited to work with someone like you—full of ideas and a real drive for better outcomes. And I can’t wait to get good enough at pool to be at your level finally! 😄</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="David G">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">David G</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">From day one, you impressed me with how quickly you learned the job and how confidently you tackle challenges. You’re great to work with. P.S. stop wreckin’ da gaff, will ya! 😂</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Pau">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Pau</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Eres muy divertido, me gusta mucho trabajar y jajaja contigo, mi amigo! Saludos!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Chris">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Chris</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">You are a great craic, I feel very lucky to be your favourite colleague 😂</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Yash">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Yash</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">You are such a smart and sound guy, it's always a pleasure to talk to ye! :D</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="David Doyle">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">David Doyle</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">David Doyle is an absolute pleasure to have in the office, incredibly efficient and organised and always friendly and happy to help!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Gargi">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Gargi</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Gargi is full of energy and her genuine passion for her work and belief in Tempo shines through.</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Dan C">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Dan C</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Dan C is an excellent shoulder to lean on when it comes to Kerbi and has done an incredible job with demos, presenting both internally and externally with confidence since joining the team</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Garrett">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Garrett</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Garrett brings great humour and outlook (no pun intended!) to the office and is, of course, a beast at pool!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Eamon">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Eamon</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Eamon is an absolute joy to work with and his welcoming nature and ability to speak Irish fluently make him a star in the office!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Nikhil">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Nikhil</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Nikhil is such a kind, happy and helpful person who is always delighted to help!!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Rajesh">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Rajesh</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Rajesh has saved everyone on the team (or me at least!!) countless times when it come to technical problems. He is truly a tech wizard and has never once been unable to solve a problem! </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Ross">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Ross</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Ross is an invaluable team member, always happy to help and always in possession of excellent insight and knowledge.  Not to mention his phenomenal cooking at events (bringing in a giant pot of stew and a hob while on crutches) and even when there are no events (surprise tea bracks!)</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Meadhbh">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Meadhbh</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Meadhbh is such a true pleasure to work with. She is kind, funny, dedicated and an excellent team player!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Tom">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Tom</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Tom is an excellent shoulder to lean on, both for knowledge and support. It is evident that he cares for the team and the work that we do. He is always happy to help despite his very busy schedule!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Killian">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Killian</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Killian is a wonderful team member whose helpful nature and ingenuity know no boundaries!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Brendan Tuite">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Brendan Tuite</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">The ORACLE of knowledge when it comes to data modelling and structuring tables to suit the known and yet unknown client reporting requirements, Brendan is always there to support colleagues and ensure things are done in the proper way.</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Brendan Jobus">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Brendan Jobus</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Brendan is tenacious in his efforts to wrangle data into a reportable fashion. Brendan has really shown this in his work with Virgin Media, going the extra mile to dig into the root cause of data issues to improve reporting.</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Jason">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Jason</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Jason is both knowledgeable and determined to drive business value for clients through data science and advanced analytical techniques. Jason is always looking for an angle that can be worked to move from simple dashboard reporting to an Agentic future.</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Maissa">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Maissa</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Maissa is always available to help and support the delivery teams. Bringing professional project management capabilities with an "amour pour les frameworks" to ensure good practices are instilled in the team.
+ </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Eder">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Eder</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">He's a One in a Million Brazilian.  Solid as a rock star colleague.  Good Looking with brains to burn.</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Kshitij">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Kshitij</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">A great guy to work with.   Super Smart and on time.   And when it comes to a 'Can Do Attitude'... Oh boy, Can He Do Attitude! </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Daniel F">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Daniel F</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Dan F. is so inviting and a great person to work with. He brings a really good energy and it is always great to catch up with him!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Eder">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Eder</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Eder is a great problem-solver and an even better teammate, he's always helpful, approachable and kind.
+Pranav is a strong team player whose positive attitude and easy collaboration make a real difference day to day.</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Kshitij">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Kshitij</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Kshitij is a great person to work with. He takes a lot of pride in his work and always has a can-do attitude!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Sean">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Sean</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Sean’s relax attitude and great sense of humour make him someone people naturally gravitate toward and genuinely enjoy being around.</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Hannah">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Hannah</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">You are so fun to work with, big kudos for the great style!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Brendan Tuite">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Brendan Tuite</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">It's great to see your appreciation for good coffee, music, and the work you perform! You are very smart and great to talk to! </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Nikhil">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Nikhil</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">I really admire how you work and how you are as a person; you definitely have an even brighter future ahead of you!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Pranav">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Pranav</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Pranav is always in a good mood even when things go bad! He makes the lunch in VMI very appreciable and it is always funny to see him get mad about football! </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Ross">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Ross</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Ross is great to work with daily! He is very positive, hard working, helpful and great for the culture of the office, always getting involved especially with cooking & baking! </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Damien">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Damien</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Damien has been a great addition to the company. He is very supportive, positive and brings great energy!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Gargi">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Gargi</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Gargi is hilarious and brings great energy to the team! She is also very helpful and patient!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Shane">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Shane</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Shane is very collaborative, easy to work with, thorough & clear! Has been very helpful supporting the sizing of a new project.</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="David Doyle">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">David Doyle</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">David is very pro active and collaborative. He is great to work with daily, very hard working and keen to progress. </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Garrett">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Garrett</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Garrett is hilarious, brings a very positive energy and sharp wit to the team! </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Anna and Daniel">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Anna and Daniel</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">I really loved working with them on ILG for the last few months! :)</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Garrett">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Garrett</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Thanks to Garrett for always trying to help with any questions I have</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Hannah, Chris and Miriam">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Hannah, Chris and Miriam</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">For being very active in the social committee and helping out despite being busy with client work!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Daniel F">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Daniel F</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Dan is an incredible teammate-always helpful, positive, and easy to work with!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Yash">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Yash</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Fantastic multi-tasker- I honestly don’t know how he gets it all done. Really inspiring to work with! 🙌</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Maissa">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Maissa</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">A great listener, amazing friend and a very positive influence</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Brendan Jobus">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Brendan Jobus</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Brendan is a great energy and really talented teammate! </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Meadhbh">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Meadhbh</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">You are a very sweet person and great to work with! Thank you for the nice chats and chocolates 🤩</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Yash">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Yash</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Yash is always down to help anyone with any task regardless of which project he is in. If I am ever stuck in a project, I can always rely on Yash to help me out. </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Eamon">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Eamon</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Eamon is a Tempo and .Net wizardd!! Thank you for all your support!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Tom">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Tom</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Amazing mentor, PM and leader</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Shireen">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Shireen</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Shireen always has your back and the best gossip to share</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Everyone">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Everyone</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">I’m truly grateful to have such incredible colleagues around me!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Yash and Pranav">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Yash and Pranav</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">You both are amazing to work with. I’ve really enjoyed our crazy technical discussions n how much we’ve learned from each other’s perspectives. Surviving Squad 2 & 3 at VMI was definitely easier with you two onboard!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Daniel F">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Daniel F</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Thankyouuzz for your help with validations & deployments. Your support has been invaluable!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Team GCD (Gargi, Cairo, Dan C)">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Team GCD (Gargi, Cairo, Dan C)</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">You’re the best & the sweetest team I could ask for! Always positive, supportive, n ready to take on any challenge with a true can-do attitude. </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Hannah and Social Committee">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Hannah and Social Committee</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Huge thanks for organizing all the fun events and keeping team morale high. Your energy and enthusiasm bring such a great spirit to the team!</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Nikhil and Ramit">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Nikhil and Ramit</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">I really appreciate the level of patience you both have, & thankyouu for always explaining things so clearly, even with all my crazy questions about apps</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Jason and Maissa">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Jason and Maissa</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">I really appreciate ur guidance on handling challenging situations n all ur support along the way.</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Anna, Alex, Chris, and Miriam">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Anna, Alex, Chris, and Miriam</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Even though we’re on different projects, ur warmth & connection always make the workplace brighter. I love how we never lose track of each other.</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Garrett">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Garrett</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">Thank you for ur consistent support as a line manager and for always encouraging me to take on new challenges. I really appreciate ur guidance on how to manage & motivate my own team.</div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flip-card" data-name="Hannah">
+        <div class="flip-card-inner">
+            
+            <div class="flip-card-front" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text name-text">Hannah</div>
+            </div>
+
+            <div class="flip-card-back" onclick="this.parentElement.parentElement.classList.toggle('flipped')">
+                <svg viewBox="0 0 512 512" class="heart-svg">
+                    <path d="M256 464l-35-32C118 338 48 274 48 192 48 128 96 80 160 80c38 0 74 18 96 47 22-29 58-47 96-47 64 0 112 48 112 112 0 82-70 146-173 240l-35 32z"
+                    fill="#fff0f5"
+                    stroke="#d62828"
+                    stroke-width="8"
+                    stroke-dasharray="12,8"/>
+                </svg>
+                <div class="heart-text message-text">You bring the brightest vibe to the office! From ur cheerful hellos & happiest ""Bye everyone :D"" to always appreciating everyone in ur conversations, you have such an infectious energy that lifts us all up. Thankyuu for getting the best out of everyone around you."</div>
+            </div>
+
+        </div>
+    </div>
+    
+</div>
+
+<script>
+function filterCards() {
+    const selected = document.getElementById("nameFilter").value;
+    const cards = document.querySelectorAll(".flip-card");
+
+    cards.forEach(card => {
+        if (selected === "all" || card.dataset.name === selected) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
